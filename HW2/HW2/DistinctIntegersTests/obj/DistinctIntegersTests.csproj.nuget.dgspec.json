@@ -1,0 +1,161 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsAppTests\\DistinctIntegersTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsAppTests\\DistinctIntegersTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsAppTests\\DistinctIntegersTests.csproj",
+        "projectName": "DistinctIntegersTests",
+        "projectPath": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsAppTests\\DistinctIntegersTests.csproj",
+        "packagesPath": "C:\\Users\\ayden\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsAppTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ayden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\DistinctIntegers.csproj": {
+                "projectPath": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\DistinctIntegers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\DistinctIntegers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\DistinctIntegers.csproj",
+        "projectName": "DistinctIntegers",
+        "projectPath": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\DistinctIntegers.csproj",
+        "packagesPath": "C:\\Users\\ayden\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ayden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

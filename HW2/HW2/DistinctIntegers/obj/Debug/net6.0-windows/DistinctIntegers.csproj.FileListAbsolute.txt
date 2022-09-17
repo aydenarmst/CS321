@@ -1,0 +1,17 @@
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\bin\Debug\net6.0-windows\DistinctIntegers.exe
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\bin\Debug\net6.0-windows\DistinctIntegers.deps.json
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\bin\Debug\net6.0-windows\DistinctIntegers.runtimeconfig.json
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\bin\Debug\net6.0-windows\DistinctIntegers.dll
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\bin\Debug\net6.0-windows\DistinctIntegers.pdb
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.csproj.AssemblyReference.cache
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\HW2.Form1.resources
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.csproj.GenerateResource.cache
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.AssemblyInfoInputs.cache
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.AssemblyInfo.cs
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.csproj.CoreCompileInputs.cache
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.dll
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\refint\DistinctIntegers.dll
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.pdb
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\DistinctIntegers.genruntimeconfig.cache
+C:\Users\ayden\OneDrive - Washington State University (email.wsu.edu)\Senior Yr\cpts 321\Git folder\cpts321-hws\HW2\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\ref\DistinctIntegers.dll

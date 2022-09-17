@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7ZDKiA8Ww9Vondi/z0HiMa31pMbXUxGmaHGS+xtWqq8zCw/M4hmuXyb5eRLr7GSHRa7GQmLXfbgkI6t87Y+jwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ayden\\OneDrive - Washington State University (email.wsu.edu)\\Senior Yr\\cpts 321\\Git folder\\cpts321-hws\\HW2\\WinFormsApp\\WinFormsApp\\DistinctIntegers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ayden\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
+  "logs": []
+}
