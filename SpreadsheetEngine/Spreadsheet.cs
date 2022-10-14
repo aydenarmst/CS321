@@ -42,12 +42,12 @@ namespace SpreadsheetEngine
         public event PropertyChangedEventHandler? CellPropertyChanged;
 
         /// <summary>
-        /// Gets row Count.
+        /// Gets or sets row Count.
         /// </summary>
         private int RowCount { get; set; }
 
         /// <summary>
-        /// Gets column Count.
+        /// Gets or sets column Count.
         /// </summary>
         private int ColumnCount { get; set; }
 
@@ -83,7 +83,7 @@ namespace SpreadsheetEngine
 
             for (int i = 0; i < 50; i++)
             {
-                this.sheet[i, 1].CellTextAccessor = "This is cell B" + (i + 1) ;
+                this.sheet[i, 1].CellTextAccessor = "This is cell B" + (i + 1);
                 this.sheet[i, 0].CellTextAccessor = "=B" + i;
             }
         }
