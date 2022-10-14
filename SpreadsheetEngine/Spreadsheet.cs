@@ -36,36 +36,109 @@ namespace SpreadsheetEngine
         }
 
         /// <summary>
-        /// Gets or sets row Count.
+        /// Event which subscribes to a single event that lets the user know when any property for a cell has changed.
         /// </summary>
-        private int RowCount { get; set; }
+        public event PropertyChangedEventHandler? CellPropertyChanged;
 
         /// <summary>
-        /// Gets or sets column Count.
+        /// Gets row Count.
         /// </summary>
-        private int ColumnCount { get; set; }
+        private int RowCount { get;  }
 
         /// <summary>
-        /// Gets the cell from given index's. Assuming the index's inputted arent starting from 0.
+        /// Gets column Count.
+        /// </summary>
+        private int ColumnCount { get; }
+
+        /// <summary>
+        /// Gets the cell from given index's.
         /// </summary>
         /// <param name="row">row input.</param>
         /// <param name="column">column input.</param>
         /// <returns>cell according to those inputs.</returns>
         public Cell? GetCell(int row, int column)
         {
-            if (this.sheet[row - 1, column - 1] == null)
+            if (row >= 0 && row < this.RowCount && column >= 0 && row < this.ColumnCount)
             {
-                return null;
+                return this.sheet[row, column];
             }
             else
             {
-                return this.sheet[row - 1, column - 1];
+                return null;
             }
         }
 
         /// <summary>
-        /// Event which subscribes to a single event that lets the user know when any property for a cell has changed.
+        /// Method to notify.
         /// </summary>
-        public event PropertyChangedEventHandler CellPropertyChanged;
+        /// <param name="name">string inputted.</param>
+        /// <param name="sender">object sender.</param>
+        private void NotifyPropertyChanged(object sender, string name)
+        {
+            this.CellPropertyChanged?.Invoke(sender, new PropertyChangedEventArgs(name));
+        }
+
+        private void PropertyChangeHandler(object sender, PropertyChangedEventArgs e)
+        {
+            GenerateCell cell = (GenerateCell)sender;
+
+            if (e.PropertyName == "Text")
+            {
+                this.Compute(cell);
+                this.NotifyPropertyChanged(cell, "Value");
+            }
+
+            if (e.PropertyName == "Value")
+            {
+                this.NotifyPropertyChanged(cell, "Value");
+            }
+        }
+
+
+        /// <summary>
+        /// Evaluates to see if the string is empty or if it starts with =.
+        /// </summary>
+        /// <param name="target">cell target.</param>
+        private void Evaluate(Cell target)
+        {
+            string cellText = target.CellTextAccessor;
+            string cellValue = target.CellValueAccessor;
+
+            if (cellText == string.Empty)
+            {
+                target.SetCellValue(string.Empty);
+            }
+
+            if (cellText.StartsWith('='))
+            {
+                this.Compute(target);
+            }
+            else
+            {
+                target.SetCellValue(target.CellValueAccessor);
+            }
+        }
+
+        /// <summary>
+        /// Compute everything after the = in the cell if given constraints.
+        /// </summary>
+        /// <param name="target">cell target.</param>
+        private void Compute(Cell target)
+        {
+            string exp = target.CellTextAccessor[1..];
+            char column = exp[0];
+            int columnNumber = column - 'A';
+
+            try
+            {
+                int row = Convert.ToInt32(exp[1..]) - 1;
+                Cell get = this.GetCell(row, columnNumber) !;
+                target.SetCellValue(get.CellValueAccessor);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
