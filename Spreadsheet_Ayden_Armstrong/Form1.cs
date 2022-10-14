@@ -1,7 +1,7 @@
 // <copyright file="Form1.cs" company="Ayden Armstrong [011672241]">
 // Copyright (c) Ayden Armstrong [011672241]. All rights reserved.
 // </copyright>
-namespace Spreadsheet_Ayden_Armstrong
+namespace SpreadsheetEngine
 {
     using System.ComponentModel;
 

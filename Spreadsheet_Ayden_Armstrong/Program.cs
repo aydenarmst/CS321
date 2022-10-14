@@ -2,7 +2,7 @@
 // Copyright (c) Ayden Armstrong [011672241]. All rights reserved.
 // </copyright>
 
-namespace Spreadsheet_Ayden_Armstrong
+namespace SpreadsheetEngine
 {
     internal static class Program
     {

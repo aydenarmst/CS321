@@ -1,4 +1,4 @@
-﻿namespace Spreadsheet_Ayden_Armstrong
+﻿namespace SpreadsheetEngine
 {
     partial class Form1
     {

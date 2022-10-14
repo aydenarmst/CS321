@@ -1,7 +1,7 @@
 ﻿// <copyright file="Cell.cs" company="Ayden Armstrong [011672241]">
 // Copyright (c) Ayden Armstrong [011672241]. All rights reserved.
 // </copyright>
-namespace Spreadsheet_Ayden_Armstrong
+namespace SpreadsheetEngine
 {
     using System.ComponentModel;
 
@@ -10,7 +10,6 @@ namespace Spreadsheet_Ayden_Armstrong
     /// </summary>
     public abstract class Cell : INotifyPropertyChanged
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Cell"/> class.
         /// </summary>
@@ -23,7 +22,6 @@ namespace Spreadsheet_Ayden_Armstrong
             this.cellText = string.Empty;
             this.cellValue = string.Empty;
         }
-
 
         /// <summary>
         /// Property Changed to notify property change.
@@ -69,7 +67,6 @@ namespace Spreadsheet_Ayden_Armstrong
         /// Protected Cell Value.
         /// </summary>
         protected string cellValue;
-
 
         /// <summary>
         /// Gets with a conditonal for the cell value.
