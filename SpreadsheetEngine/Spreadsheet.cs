@@ -109,7 +109,7 @@ namespace SpreadsheetEngine
 
             if (e.PropertyName == "Text")
             {
-                this.Evaluate(cell!);
+                this.EvaluateCell(cell!);
                 this.NotifyPropertyChanged(cell!, "Value");
             }
 
@@ -123,7 +123,7 @@ namespace SpreadsheetEngine
         /// Evaluates to see if the string is empty or if it starts with =.
         /// </summary>
         /// <param name="target">cell target.</param>
-        private void Evaluate(GenerateCell target)
+        private void EvaluateCell(GenerateCell target)
         {
             string cellText = target.CellTextAccessor;
 
@@ -134,7 +134,7 @@ namespace SpreadsheetEngine
 
             if (cellText.StartsWith('='))
             {
-                this.Compute(target);
+                this.ComputeCell(target);
             }
             else
             {
@@ -146,7 +146,7 @@ namespace SpreadsheetEngine
         /// Compute everything after the = in the cell if given constraints.
         /// </summary>
         /// <param name="target">cell target.</param>
-        private void Compute(GenerateCell target)
+        private void ComputeCell(GenerateCell target)
         {
             string exp = target.CellTextAccessor[1..];
             char column = exp[0];
