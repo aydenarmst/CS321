@@ -11,14 +11,34 @@ namespace SpreadsheetEngine
     public abstract class Cell : INotifyPropertyChanged
     {
         /// <summary>
+        /// Protected Cell Text.
+        /// </summary>
+        protected string cellText;
+
+        /// <summary>
+        /// Protected Cell Value. Its says to make it private but im going off of the rubrics guidelines.
+        /// </summary>
+        protected string cellValue;
+
+        /// <summary>
+        /// Gets rowIndex.
+        /// </summary>
+        private readonly int rowIndex;
+
+        /// <summary>
+        /// Gets column index.
+        /// </summary>
+        private readonly int columnIndex;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Cell"/> class.
         /// </summary>
         /// <param name="row">given row.</param>
         /// <param name="column">given column.</param>
         protected Cell(int row, int column)
         {
-            this.RowIndex = row;
-            this.ColumnIndex = column;
+            this.rowIndex = row;
+            this.columnIndex = column;
             this.cellText = string.Empty;
             this.cellValue = string.Empty;
         }
@@ -27,21 +47,6 @@ namespace SpreadsheetEngine
         /// Property Changed to notify property change.
         /// </summary>
         public event PropertyChangedEventHandler? PropertyChanged;
-
-        /// <summary>
-        /// Gets rowIndex.
-        /// </summary>
-        public int RowIndex { get; }
-
-        /// <summary>
-        /// Gets column index.
-        /// </summary>
-        public int ColumnIndex { get; }
-
-        /// <summary>
-        /// Protected Cell Text.
-        /// </summary>
-        protected string cellText;
 
         /// <summary>
         /// Gets or sets cellText Constructors.
@@ -55,7 +60,7 @@ namespace SpreadsheetEngine
 
             set
             {
-                if (this.cellText != this.CellTextAccessor)
+                if (value != this.CellTextAccessor)
                 {
                     this.cellText = value;
                     this.NotifyPropertyChanged("Text");
@@ -64,18 +69,13 @@ namespace SpreadsheetEngine
         }
 
         /// <summary>
-        /// Protected Cell Value.
-        /// </summary>
-        protected string cellValue;
-
-        /// <summary>
         /// Gets with a conditonal for the cell value.
         /// </summary>
         public string CellValueAccessor
         {
             get
             {
-                if (this.cellValue[0].Equals('='))
+                if (this.cellText.Length > 0 && this.cellText[0].Equals('='))
                 {
                     return this.cellValue;
                 }
@@ -84,6 +84,22 @@ namespace SpreadsheetEngine
                     return this.cellText;
                 }
             }
+        }
+
+        /// <summary>
+        /// Gets getter for row index.
+        /// </summary>
+        public int GetRowIndex
+        {
+            get { return this.rowIndex; }
+        }
+
+        /// <summary>
+        /// Gets getter for column index.
+        /// </summary>
+        public int GetColumnIndex
+        {
+            get { return this.columnIndex; }
         }
 
         /// <summary>

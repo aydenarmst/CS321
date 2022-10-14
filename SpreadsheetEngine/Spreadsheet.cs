@@ -31,6 +31,7 @@ namespace SpreadsheetEngine
                 for (int j = 0; j < columns; j++)
                 {
                     this.sheet[i, j] = new GenerateCell(i, j);
+                    this.sheet[i, j].PropertyChanged += new PropertyChangedEventHandler(PropertyChangeHandler!);
                 }
             }
         }
@@ -43,12 +44,12 @@ namespace SpreadsheetEngine
         /// <summary>
         /// Gets row Count.
         /// </summary>
-        private int RowCount { get;  }
+        private int RowCount { get; set; }
 
         /// <summary>
         /// Gets column Count.
         /// </summary>
-        private int ColumnCount { get; }
+        private int ColumnCount { get; set; }
 
         /// <summary>
         /// Gets the cell from given index's.
@@ -56,11 +57,11 @@ namespace SpreadsheetEngine
         /// <param name="row">row input.</param>
         /// <param name="column">column input.</param>
         /// <returns>cell according to those inputs.</returns>
-        public Cell? GetCell(int row, int column)
+        public GenerateCell? GetCell(int row, int column)
         {
-            if (row >= 0 && row < this.RowCount && column >= 0 && row < this.ColumnCount)
+            if (row >= 0 && row < this.RowCount && column >= 0 && column < this.ColumnCount)
             {
-                return this.sheet[row, column];
+                return (GenerateCell)this.sheet[row, column];
             }
             else
             {
@@ -69,23 +70,47 @@ namespace SpreadsheetEngine
         }
 
         /// <summary>
+        /// Method for the demo to illistrate how changing cells in the worksheet object trigger a proper UI update.
+        /// </summary>
+        public void Demo1()
+        {
+            var rand = new Random();
+
+            for (int i = 0; i < 50; i++)
+            {
+                this.sheet[rand.Next(49), rand.Next(25)].CellTextAccessor = "Hello World!";
+            }
+
+            for (int i = 0; i < 50; i++)
+            {
+                this.sheet[i, 1].CellTextAccessor = "This is cell B" + (i + 1) ;
+                this.sheet[i, 0].CellTextAccessor = "=B" + i;
+            }
+        }
+
+        /// <summary>
         /// Method to notify.
         /// </summary>
-        /// <param name="name">string inputted.</param>
         /// <param name="sender">object sender.</param>
+        /// <param name="name">string inputted.</param>
         private void NotifyPropertyChanged(object sender, string name)
         {
             this.CellPropertyChanged?.Invoke(sender, new PropertyChangedEventArgs(name));
         }
 
+        /// <summary>
+        /// Method for Evaluating if which variable the change falls under and computed on conditonals.
+        /// </summary>
+        /// <param name="sender">sender.</param>
+        /// <param name="e">event.</param>
         private void PropertyChangeHandler(object sender, PropertyChangedEventArgs e)
         {
             GenerateCell cell = (GenerateCell)sender;
 
             if (e.PropertyName == "Text")
             {
-                this.Compute(cell);
-                this.NotifyPropertyChanged(cell, "Value");
+                this.Evaluate(cell!);
+                this.NotifyPropertyChanged(cell!, "Value");
             }
 
             if (e.PropertyName == "Value")
@@ -94,17 +119,15 @@ namespace SpreadsheetEngine
             }
         }
 
-
         /// <summary>
         /// Evaluates to see if the string is empty or if it starts with =.
         /// </summary>
         /// <param name="target">cell target.</param>
-        private void Evaluate(Cell target)
+        private void Evaluate(GenerateCell target)
         {
             string cellText = target.CellTextAccessor;
-            string cellValue = target.CellValueAccessor;
 
-            if (cellText == string.Empty)
+            if (cellText.Length == 0)
             {
                 target.SetCellValue(string.Empty);
             }
@@ -123,21 +146,16 @@ namespace SpreadsheetEngine
         /// Compute everything after the = in the cell if given constraints.
         /// </summary>
         /// <param name="target">cell target.</param>
-        private void Compute(Cell target)
+        private void Compute(GenerateCell target)
         {
             string exp = target.CellTextAccessor[1..];
             char column = exp[0];
             int columnNumber = column - 'A';
-
-            try
+            var row = int.Parse(exp[1..]);
+            GenerateCell get = this.GetCell(row, columnNumber) !;
+            if (get != null)
             {
-                int row = Convert.ToInt32(exp[1..]) - 1;
-                Cell get = this.GetCell(row, columnNumber) !;
                 target.SetCellValue(get.CellValueAccessor);
-            }
-            catch
-            {
-                throw;
             }
         }
     }
