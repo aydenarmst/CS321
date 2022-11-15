@@ -3,7 +3,9 @@
 // </copyright>
 namespace SpreadsheetEngine
 {
+    using System;
     using System.ComponentModel;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Main entry for UI of the spreadsheet.
@@ -19,6 +21,21 @@ namespace SpreadsheetEngine
         {
             this.InitializeComponent();
             this.engine = new SpreadsheetEngine.Spreadsheet(50, 26);
+
+            // New event.
+            this.engine.PropertyChanged += this.SingleCellPropertyChanged;
+        }
+
+        private void SingleCellPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            Cell? newCell = sender as Cell;
+            if (newCell != null)
+            {
+                if (e.PropertyName == "Changed cell.")
+                {
+                    this.dataGridView1.Rows[newCell.GetRowIndex].Cells[newCell.GetColumnIndex].Value = newCell.CellValueAccessor;
+                }
+            }
         }
 
         private void InitializeDataGrid()
@@ -42,24 +59,41 @@ namespace SpreadsheetEngine
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            this.SubscribePropertyChange();
             this.InitializeDataGrid();
         }
 
-        private void SubscribePropertyChange()
+        private void Button1_Click(object sender, EventArgs e)
         {
-            this.engine.CellPropertyChanged += this.Spreadsheet_PropertyChange!;
         }
 
-        private void Spreadsheet_PropertyChange(object sender, PropertyChangedEventArgs e)
+        private void DataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            Cell? target = sender as Cell;
-            this.dataGridView1.Rows[target!.GetRowIndex].Cells[target.GetColumnIndex].Value = target.CellValueAccessor;
+            string alert = string.Format("You are editing {0}, {1}", e.ColumnIndex, e.RowIndex);
+            this.Text = alert;
+
+            this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = this.engine.Sheet[e.RowIndex, e.ColumnIndex].CellTextAccessor;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            this.engine.Demo1();
+            string alert = string.Format("Finished editing {0}, {1}", e.ColumnIndex, e.RowIndex);
+            this.Text = alert;
+
+            string textTemp;
+
+            if (this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                textTemp = this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                this.engine.Sheet[e.RowIndex, e.ColumnIndex].CellTextAccessor = textTemp;
+
+                this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = this.engine.Sheet[e.RowIndex, e.ColumnIndex].CellValueAccessor;
+            }
+            else
+            {
+                this.engine.Sheet[e.RowIndex, e.ColumnIndex].CellTextAccessor = string.Empty;
+                this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = string.Empty;
+            }
         }
     }
 }

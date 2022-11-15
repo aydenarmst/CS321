@@ -4,7 +4,6 @@
 
 namespace SpreadsheetEngine
 {
-
     /// <summary>
     /// GenerateCell inherits from the Cell class.
     /// </summary>
